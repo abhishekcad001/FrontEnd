@@ -50,10 +50,7 @@ class Footer_v1 extends Component {
                       <img src={publicUrl + "assets/img/logo-2.png"} alt="Logo" />
                     </div>
                   </div>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the
-                    printing.
-                  </p>
+                 
                   <div className="footer-address">
                     <ul>
                       <li>
