@@ -13,7 +13,7 @@ class AboutV3 extends Component {
 			    <div className="row">
 			      <div className="col-lg-6 align-self-center">
 			        <div className="about-us-img-wrap about-img-left">
-			          <img src={publicUrl+"assets/img/others/11.png"} alt="About Us Image" />
+			          <img src="https://tunatheme.com/tf/react/quarter-preview/quarter/assets/img/others/11.png" alt="About Us Image" />
 			          <div className="about-us-img-info about-us-img-info-2 about-us-img-info-3 d-none">
 			            <div className="ltn__video-img ltn__animation-pulse1">
 			              <img src={publicUrl+"assets/img/others/8.png"} alt="video popup bg image" />
