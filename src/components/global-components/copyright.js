@@ -5,7 +5,7 @@ class CopyRight extends Component {
 
     render() {
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
+    
 
         return (
 			<div className="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">

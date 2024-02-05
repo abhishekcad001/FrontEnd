@@ -81,6 +81,18 @@ font-family: 'Poppins', sans-serif;
   margin-right: -15px;
 }
 
+.logo1{
+	max-height: 100%;
+	max-width: 100%;
+	width:150px;
+	height:150px;
+	background-size: cover;
+	background-image: url('../../assets/img/LOG1.png');
+	float: left;
+}
+
+
+
 .col,
 .col-1,
 .col-10,
