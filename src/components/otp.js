@@ -1,17 +1,17 @@
 import React from 'react';
 import PageHeader from './global-components/page-header';
-import Login from './section-components/login';
+import Otp from './section-components/otp';
 import Footer from './global-components/footer';
 import NavbarV2 from './global-components/navbar-v2';
 
-const LoginV1 = () => {
-    return <div>
+const OtpU = () => {
+    return <>
         <NavbarV2 />
-        <PageHeader headertitle="Account" subheader="Login" />
-        <Login />
+        <PageHeader headertitle="Account" subheader="Otp" />
+        <Otp />
         <Footer />
-    </div>
+    </>
 }
 
-export default LoginV1
+export default OtpU
 
