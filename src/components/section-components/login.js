@@ -1,94 +1,207 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 
-class Login extends Component {
+import { Link } from "react-router-dom";
 
-    render() {
+const Login = () => {
+  const [loginData, setLoginData] = useState({});
+  const [forgetLogin, setForgetLogin] = useState({});
+  const [error, setErrors] = useState({});
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
+  const handleLogininfo = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prevLoginData) => ({ ...prevLoginData, [name]: value }));
+    setErrors({ ...error, [name]: "" });
+  };
 
-    return	<>
-	<div className="ltn__login-area pb-65">
-				<div className="container">
-				<div className="row">
-					<div className="col-lg-12">
-					<div className="section-title-area text-center">
-						<h1 className="section-title">Sign In <br />To  Your Account</h1>
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
-						Sit aliquid,  Non distinctio vel iste.</p>
-					</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-lg-6">
-					<div className="account-login-inner">
-						<form  method="GET" className="ltn__form-box contact-form-box">
-						<input type="text" name="email" placeholder="Email*" />
-						<input type="password" name="password" placeholder="Password*" />
-						<div className="btn-wrapper mt-0">
-							<button className="theme-btn-1 btn btn-block" type="submit">SIGN IN</button>
-						</div>
-						<div className="go-to-btn mt-20">
-						<a href="#" title="Forgot Password?" data-bs-toggle="modal" data-bs-target="#ltn_forget_password_modal"><small>FORGOTTEN YOUR PASSWORD?</small></a>
-						</div>
-						</form>
-					</div>
-					</div>
-					<div className="col-lg-6">
-					<div className="account-create text-center pt-50">
-						<h4>DON'T HAVE AN ACCOUNT?</h4>
-						<p>Add items to your wishlistget personalised recommendations <br />
-						check out more quickly track your orders register</p>
-						<div className="btn-wrapper go-top">
-							<Link to="/register" className="theme-btn-1 btn black-btn">CREATE ACCOUNT</Link>
-						</div>
-					</div>
-					</div>
-				</div>
-				</div>
-						</div>
-			<div className="ltn__modal-area ltn__add-to-cart-modal-area----">
-			<div className="modal fade" id="ltn_forget_password_modal" tabIndex={-1}>
-				<div className="modal-dialog modal-md" role="document">
-				<div className="modal-content">
-					<div className="modal-header">
-					<button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-					</div>
-					<div className="modal-body">
-					<div className="ltn__quick-view-modal-inner">
-						<div className="modal-product-item">
-						<div className="row">
-							<div className="col-12">
-							<div className="modal-product-info text-center">
-								<h4>FORGET PASSWORD?</h4>
-								<p className="added-cart"> Enter you register email.</p>
-								<form action="#" className="ltn__form-box">
-								<input type="text" name="email" placeholder="Type your register email*" />
-								<div className="btn-wrapper mt-0">
-									<button className="theme-btn-1 btn btn-full-width-2" type="submit">Submit</button>
-								</div>
-								</form>
-							</div>
-					
-							<div className="additional-info d-none">
-								<p>We want to give you <b>10% discount</b> for your first order, <br />  Use discount code at checkout</p>
-								<div className="payment-method">
-								<img src={publicUrl+"assets/img/icons/payment.png"} alt="#" />
-								</div>
-							</div>
-							</div>
-						</div>
-						</div>
-					</div>
-					</div>
-				</div>
-				</div>
-			</div>
-			</div>
-	</>
-        }
-}
+  const validateForm = () => {
+    let formIsValid = true;
+    let err = {};
 
-export default Login
+    if (!loginData.email) {
+      err.email = "*Please enter email here";
+      formIsValid = false;
+    } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(loginData.email)) {
+      err.email = "* Please enter a valid email address";
+      formIsValid = false;
+    }
+    if (!loginData.password) {
+      err.password = "* Please enter password here.";
+      formIsValid = false;
+    }
+    setErrors(err);
+    return formIsValid;
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      // Perform further actions here, e.g., make an API call
+    }
+  };
+
+  const inputChange = (e) => {
+    const { name, value } = e.target;
+    setForgetLogin((prevForgetLogin) => ({ ...prevForgetLogin, [name]: value }));
+    setErrors({ ...error, [name]: "" });
+    console.log("forget", forgetLogin);
+  };
+  const validateForgetMail = () => {
+    let formIsValid = true;
+    let err = {};
+
+    if (!forgetLogin.forgetemail) {
+      err.forgetemail = "*Please enter email here";
+      formIsValid = false;
+    } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(forgetLogin.forgetemail)) {
+      err.forgetemail = "* Please enter a valid email address";
+      formIsValid = false;
+    }
+
+    setErrors(err);
+    return formIsValid;
+  };
+  const handleSubmitForget = () => {
+    if (validateForgetMail()) {
+      console.log("login done ");
+      // Perform further actions here, e.g., make an API call
+    }
+  };
+
+  return (
+    <>
+      <div className="ltn__login-area pb-65">
+	 
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title-area text-center">
+                <h1 className="section-title">
+                  Sign In <br />
+                  To Your Account
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="account-login-inner">
+                <div className="ltn__form-box contact-form-box">
+                  <span style={{ color: "red" }}>{error.email}</span>{" "}
+                  <input
+                    type="email"
+                    name="email"
+                    value={loginData?.email}
+                    placeholder="Email*"
+                    onChange={(e) => {
+                      handleLogininfo(e);
+                    }}
+                  />
+                  <span style={{ color: "red" }}>{error.password}</span>
+                  <input
+                    type="password"
+                    name="password"
+                    value={loginData?.password}
+                    onChange={(e) => {
+                      handleLogininfo(e);
+                    }}
+                    placeholder="Password*"
+                  />
+                  <div className="btn-wrapper mt-0">
+                    <button
+                      className="theme-btn-1 btn btn-block"
+                      onClick={() => {
+                        handleSubmit();
+                      }}
+                    >
+                      SIGN IN
+                    </button>
+                  </div>
+                  <div className="go-to-btn mt-20">
+                    <a
+                      href="#"
+                      title="Forgot Password?"
+                      data-bs-toggle="modal"
+                      data-bs-target="#ltn_forget_password_modal"
+                    >
+                      <small>FORGOTTEN YOUR PASSWORD?</small>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="account-create text-center pt-50">
+                <h4>DON'T HAVE AN ACCOUNT?</h4>
+
+                <div className="btn-wrapper go-top">
+                  <Link to="/register" className="theme-btn-1 btn black-btn">
+                    CREATE ACCOUNT
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="ltn__modal-area ltn__add-to-cart-modal-area----">
+        <div className="modal fade" id="ltn_forget_password_modal" tabIndex={-1}>
+          <div className="modal-dialog modal-md" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="ltn__quick-view-modal-inner">
+                  <div className="modal-product-item">
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="modal-product-info text-center">
+                          <h4>FORGET PASSWORD?</h4>
+                          <p className="added-cart"> Enter your registered email.</p>
+                          <div className="ltn__form-box">
+                            <span style={{ color: "red" }}>{error.forgetemail}</span>
+                            <input
+                              type="email"
+                              name="forgetemail"
+                              //   value={forgetLogin?.forgetemail}
+                              placeholder="Type your registered email*"
+                              onChange={(e) => {
+                                inputChange(e);
+                              }}
+                            />
+
+                            <div className="btn-wrapper mt-0">
+                              <button
+                                className="theme-btn-1 btn btn-full-width-2"
+                                onClick={() => {
+                                  handleSubmitForget();
+                                }}
+                              >
+                                Submit
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="additional-info d-none">
+                          <p>
+                            We want to give you <b>10% discount</b> for your first order, <br /> Use discount code at
+                            checkout
+                          </p>
+                          <div className="payment-method">{/* Add your payment method content here */}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Login;
