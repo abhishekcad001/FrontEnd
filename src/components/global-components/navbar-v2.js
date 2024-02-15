@@ -9,7 +9,7 @@ class NavbarV2 extends Component {
     return (
       <div>
         <header className="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
-          <div className="ltn__header-top-area section-bg-6 top-area-color-white---">
+          {/* <div className="ltn__header-top-area section-bg-6 top-area-color-white---">
             <div className="container">
               <div className="row">
                 <div className="col-md-7">
@@ -36,9 +36,9 @@ class NavbarV2 extends Component {
                           <Social />
                         </li>
                         <li>
-                          {/* <div className="header-top-btn">
-							 <Link to="/add-listing">Add Listing</Link>
-						 </div> */}
+                          <div className="header-top-btn">
+                            <Link to="/add-listing">Add Listing</Link>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -46,7 +46,7 @@ class NavbarV2 extends Component {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white">
             <div className="container">
               <div className="row">
@@ -66,27 +66,17 @@ class NavbarV2 extends Component {
                         <ul>
                           <li className="menu-icon">
                             <Link to="/">Home</Link>
-                            
-                          </li>
-                          {/* <li className="menu-icon">
-                            <Link to="/about">About</Link>
-                           
                           </li>
                           <li className="menu-icon">
-                            <Link to="/shop">Shop</Link>
-                            
+                            <Link to="#">Listing</Link>
                           </li>
                           <li className="menu-icon">
-                            <Link to="/blog-grid">News</Link>
-                        
+                            <Link to="#">About</Link>
                           </li>
-                          <li className="menu-icon">
-                            <Link to="#">Pages</Link>
-                           
-                          </li>
+
                           <li>
-                            <Link to="/contact">Contact</Link>
-                          </li> */}
+                            <Link to="#">Contact</Link>
+                          </li>
                         </ul>
                       </div>
                     </nav>
@@ -103,7 +93,7 @@ class NavbarV2 extends Component {
                     </div>
                     <div className="header-search-1-form">
                       <form id="#" method="get" action="#">
-                        <input type="text" name="search" defaultValue placeholder="Search here..." />
+                        <input type="text" name="search"  placeholder="Search here..." />
                         <button type="submit">
                           <span>
                             <i className="icon-search" />
@@ -141,7 +131,6 @@ class NavbarV2 extends Component {
                     </a>
                   </div> */}
                   {/* mini-cart */}
-
 
                   {/* Mobile Menu Button */}
                   <div className="mobile-menu-toggle d-xl-none">
@@ -187,23 +176,18 @@ class NavbarV2 extends Component {
               <ul>
                 <li>
                   <a href="#">Home</a>
-                
                 </li>
                 <li>
                   <Link to="/about">About</Link>
-                 
                 </li>
                 <li>
                   <Link to="/shop">Shop</Link>
-                  
                 </li>
                 <li>
                   <Link to="/blog-grid">News</Link>
-                 
                 </li>
                 <li>
                   <Link to="#">Pages</Link>
-                 
                 </li>
                 <li>
                   <Link to="/contact">Contact</Link>
@@ -266,8 +250,6 @@ class NavbarV2 extends Component {
             </div>
           </div>
         </div>
-
-      
       </div>
     );
   }

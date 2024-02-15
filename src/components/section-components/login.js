@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const [loginData, setLoginData] = useState({});
-  const [forgetLogin, setForgetLogin] = useState({});
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [forgetLogin, setForgetLogin] = useState({ forgetemail: "" });
   const [error, setErrors] = useState({});
 
   const handleLogininfo = (e) => {
@@ -17,14 +18,14 @@ const Login = () => {
     let formIsValid = true;
     let err = {};
 
-    if (!loginData.email) {
+    if (!loginData.email.trim()) {
       err.email = "*Please enter email here";
       formIsValid = false;
     } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(loginData.email)) {
       err.email = "* Please enter a valid email address";
       formIsValid = false;
     }
-    if (!loginData.password) {
+    if (!loginData.password.trim()) {
       err.password = "* Please enter password here.";
       formIsValid = false;
     }
@@ -35,6 +36,7 @@ const Login = () => {
   const handleSubmit = () => {
     if (validateForm()) {
       // Perform further actions here, e.g., make an API call
+      toast.success("You are successfully logged in ");
     }
   };
 
@@ -48,7 +50,7 @@ const Login = () => {
     let formIsValid = true;
     let err = {};
 
-    if (!forgetLogin.forgetemail) {
+    if (!forgetLogin.forgetemail.trim()) {
       err.forgetemail = "*Please enter email here";
       formIsValid = false;
     } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(forgetLogin.forgetemail)) {
@@ -69,7 +71,19 @@ const Login = () => {
   return (
     <>
       <div className="ltn__login-area pb-65">
-	 
+        <ToastContainer
+          position="top-right"
+          autoClose={8000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -164,7 +178,7 @@ const Login = () => {
                             <input
                               type="email"
                               name="forgetemail"
-                              //   value={forgetLogin?.forgetemail}
+                              value={forgetLogin?.forgetemail}
                               placeholder="Type your registered email*"
                               onChange={(e) => {
                                 inputChange(e);
