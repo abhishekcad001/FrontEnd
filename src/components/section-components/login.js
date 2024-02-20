@@ -1,9 +1,12 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const history = useHistory();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [forgetLogin, setForgetLogin] = useState({ forgetemail: "" });
   const [error, setErrors] = useState({});
@@ -33,10 +36,27 @@ const Login = () => {
     return formIsValid;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validateForm()) {
-      // Perform further actions here, e.g., make an API call
-      toast.success("You are successfully logged in ");
+      const User = {
+        email: loginData.email,
+        password: loginData.password,
+      };
+      console.log("first", User);
+      try {
+        await axios.post(`http://localhost:5000/api/auth/login`, User).then((res) => {
+          if (res.data.success === true) {
+            localStorage.setItem("userData", JSON.stringify(User));
+            localStorage.setItem("UserToken", JSON.stringify(res?.data?.token));
+            toast.success("You are successfully Login ");
+            history.push("/");
+          }
+        });
+      } catch (error) {
+        // Handle the error, log it, etc.
+        console.error("Error:", error);
+        toast.error(error.response.data.message);
+      }
     }
   };
 
@@ -61,10 +81,8 @@ const Login = () => {
     setErrors(err);
     return formIsValid;
   };
-  const handleSubmitForget = () => {
+  const handleSubmitForget = async () => {
     if (validateForgetMail()) {
-      console.log("login done ");
-      // Perform further actions here, e.g., make an API call
     }
   };
 

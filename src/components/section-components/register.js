@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -82,9 +84,9 @@ const Register = () => {
       console.log("first", User);
       try {
         await axios.post(`http://localhost:5000/api/auth/add-User`, User).then((res) => {
-          console.log("++++++++++++++++++++++++", res);
           if (res.data.success === true) {
             toast.success("You are successfully Register ");
+            history.push("/login");
           }
         });
       } catch (error) {
