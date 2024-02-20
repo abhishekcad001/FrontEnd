@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -50,10 +51,11 @@ const Register = () => {
     if (!formData.password.trim()) {
       err.password = "* Please enter Password";
       formIsValid = false;
-    } else if (formData.password.trim().length < 6 || formData.password.trim().length > 10) {
-      err.password = "* Password must be between 6 and 10 characters";
-      formIsValid = false;
     }
+    // else if (formData.password.trim().length < 6 || formData.password.trim().length > 10) {
+    //   err.password = "* Password must be between 6 and 10 characters";
+    //   formIsValid = false;
+    // }
 
     if (!formData.confirmpassword.trim()) {
       err.confirmpassword = "* Please enter Confirm Password";
@@ -69,12 +71,27 @@ const Register = () => {
     return formIsValid;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validateForm()) {
-      // Perform further actions, e.g., make an API call
-      console.log("Form submitted with data:", formData);
-
-      toast.success("You are successfully Register ");
+      const User = {
+        email: formData.email,
+        password: formData.password,
+        lastName: formData.lastname,
+        firstName: formData.firstname,
+      };
+      console.log("first", User);
+      try {
+        await axios.post(`http://localhost:5000/api/auth/add-User`, User).then((res) => {
+          console.log("++++++++++++++++++++++++", res);
+          if (res.data.success === true) {
+            toast.success("You are successfully Register ");
+          }
+        });
+      } catch (error) {
+        // Handle the error, log it, etc.
+        console.error("Error:", error);
+        toast.error(error.response.data.message);
+      }
     }
   };
 
