@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "react-toastify/dist/ReactToastify.css";
+import { ApiPost } from "../ApiService/ApiService";
 
 const Register = () => {
   const history = useHistory();
@@ -29,7 +30,7 @@ const Register = () => {
     let formIsValid = true;
     let err = {};
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
+    const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
     if (!formData.firstname.trim()) {
       err.firstname = "* Please enter First Name";
       formIsValid = false;
@@ -53,11 +54,11 @@ const Register = () => {
     if (!formData.password.trim()) {
       err.password = "* Please enter Password";
       formIsValid = false;
+    } else if (!passwordRegex.test(formData.password.trim())) {
+      err.password =
+        "* Password must be at least 6 characters long and contain at least one special character, one lowercase letter, one uppercase letter, and one numeric digit";
+      formIsValid = false;
     }
-    // else if (formData.password.trim().length < 6 || formData.password.trim().length > 10) {
-    //   err.password = "* Password must be between 6 and 10 characters";
-    //   formIsValid = false;
-    // }
 
     if (!formData.confirmpassword.trim()) {
       err.confirmpassword = "* Please enter Confirm Password";
@@ -75,20 +76,20 @@ const Register = () => {
 
   const handleSubmit = async () => {
     if (validateForm()) {
-      const User = {
+      const user = {
         email: formData.email,
         password: formData.password,
         lastName: formData.lastname,
         firstName: formData.firstname,
       };
-      console.log("first", User);
+
       try {
-        await axios.post(`http://localhost:5000/api/auth/add-User`, User).then((res) => {
-          if (res.data.success === true) {
-            toast.success("You are successfully Register ");
-            history.push("/login");
-          }
-        });
+        const response = await ApiPost("/api/auth/add-User", user);
+
+        if (response.success === true) {
+          history.push("/login");
+          toast.success("You are successfully Register ");
+        }
       } catch (error) {
         // Handle the error, log it, etc.
         console.error("Error:", error);

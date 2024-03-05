@@ -6,8 +6,7 @@ class Availability extends Component {
 
     render() {
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
-        let imagealt = 'image'
+        
 
     return <div className="select-availability-area pb-120">
 			  <div className="container">

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ApiPost } from "../ApiService/ApiService";
+import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
   const history = useHistory();
@@ -42,18 +44,19 @@ const Login = () => {
         email: loginData.email,
         password: loginData.password,
       };
-      console.log("first", User);
+
       try {
-        await axios.post(`http://localhost:5000/api/auth/login`, User).then((res) => {
-          if (res.data.success === true) {
-            localStorage.setItem("userData", JSON.stringify(User));
-            localStorage.setItem("UserToken", JSON.stringify(res?.data?.token));
-            toast.success("You are successfully Login ");
-            history.push("/");
-          }
-        });
+        const response = await ApiPost("/api/auth/login", User);
+
+        if (response.success === true) {
+          localStorage.setItem("UserToken", JSON.stringify(response?.token));
+          const decode = jwtDecode(response.token);
+          localStorage.setItem("User", JSON.stringify(decode));
+          localStorage.setItem("UserEmail", JSON.stringify( loginData.email));
+          history.push("/");
+          toast.success("You are successfully Login ");
+        }
       } catch (error) {
-        // Handle the error, log it, etc.
         console.error("Error:", error);
         toast.error(error.response.data.message);
       }
@@ -81,27 +84,32 @@ const Login = () => {
     setErrors(err);
     return formIsValid;
   };
+
   const handleSubmitForget = async () => {
     if (validateForgetMail()) {
+      const data = {
+        email: forgetLogin.forgetemail,
+      };
+
+      try {
+        const response = await ApiPost("api/auth/verify-email", data);
+
+        if (response.success === true) {
+          // Store email in local storage
+          localStorage.setItem("resetEmail", forgetLogin.forgetemail);
+          toast.success("Check your mail for Otp");
+          history.push("/otp");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        toast.error(error.response?.data?.message || "An error occurred while processing your request");
+      }
     }
   };
 
   return (
     <>
       <div className="ltn__login-area pb-65">
-        <ToastContainer
-          position="top-right"
-          autoClose={8000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

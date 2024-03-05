@@ -6,16 +6,33 @@ import Home from "./components/home-v2";
 import Login from "./components/login";
 import Register from "./components/register";
 import OtpU from "./components/otp";
+import changePass from "./components/changePass";
+import { ToastContainer } from "react-toastify";
+import Properties from "./components/properties";
 
 class Root extends Component {
   render() {
     return (
       <Router>
+        <ToastContainer
+          position="top-right"
+          autoClose={8000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/Otp" component={OtpU} />
+          <Route exact path="/Change-password" component={changePass} />
+          <Route exact path="/Properties" component={Properties} />
         </Switch>
       </Router>
     );
