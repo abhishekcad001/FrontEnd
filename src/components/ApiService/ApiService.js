@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const SECRETS = {
-  API_BASE_URL: "http://localhost:5000", 
-  API_KEY: "your_api_key_here", 
+  API_BASE_URL: "http://localhost:5000",
 };
 
 export default SECRETS;

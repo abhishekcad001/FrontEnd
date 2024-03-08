@@ -45,430 +45,356 @@ const AllProperties = () => {
                 <div className="tab-pane fade active show" id="liton_product_grid">
                   <div className="ltn__product-tab-content-inner ltn__product-grid-view">
                     <div className="row">
-                      {/* <div className="col-lg-12">
-                        <div className="ltn__search-widget mb-30">
-                          <form action="#">
-                            <input type="text" name="search" placeholder="Search your keyword..." />
-                            <button type="submit">
-                              <i className="fas fa-search" />
-                            </button>
-                          </form>
-                        </div>
-                      </div> */}
                       <div className="col-lg-4 col-sm-6 col-12">
-                        <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                          <div className="product-img">
-                            <Link to="/product-details">
+                        <Link to="/Property-details">
+                          <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                            <div className="product-img">
+                              <Link to="/Property-details">
+                                <img
+                                  src={
+                                    "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                  }
+                                  alt="#"
+                                />
+                              </Link>
+                            </div>
+                            <div className="product-info">
+                              <div className="product-badge">
+                                <ul>
+                                  <li className="sale-badg">For Rent</li>
+                                </ul>
+                              </div>
+                              <h2 className="product-title go-top">
+                                <Link to="/Property-details">New Home Nice View</Link>
+                              </h2>
+                              <div className="product-img-location">
+                                <ul>
+                                  <li className="go-top">
+                                    <Link to="/contact">
+                                      <i className="flaticon-pin" /> 299, Doon Mills Dr.
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
+                                <li>
+                                  <span>3 </span>
+                                  Bedrooms
+                                </li>
+                                <li>
+                                  <span>2 </span>
+                                  Bathrooms
+                                </li>
+                                <li>
+                                  <span>3450 </span>
+                                  square Ft
+                                </li>
+                              </ul>
+                              <div className="product-hover-action">
+                                <ul>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      title="Wishlist"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#liton_wishlist_modal"
+                                    >
+                                      <i className="flaticon-heart-1" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="product-info-bottom">
+                              <div className="product-price">
+                                <span>
+                                  $10,00,00,00,00,00<label>/Day</label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+ 
+                      <div className="col-lg-4 col-sm-6 col-12">
+                        <Link to="/Property-details">
+                          <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                            <div className="product-img">
+                              <Link to="/Property-details">
+                                <img
+                                  src={
+                                    "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                  }
+                                  alt="#"
+                                />
+                              </Link>
+                            </div>
+                            <div className="product-info">
+                              <div className="product-badge">
+                                <ul>
+                                  <li className="sale-badg">For Rent</li>
+                                </ul>
+                              </div>
+                              <h2 className="product-title go-top">
+                                <Link to="/Property-details">New Home Nice View</Link>
+                              </h2>
+                              <div className="product-img-location">
+                                <ul>
+                                  <li className="go-top">
+                                    <Link to="/contact">
+                                      <i className="flaticon-pin" /> 299, Doon Mills Dr.
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
+                                <li>
+                                  <span>3 </span>
+                                  Bedrooms
+                                </li>
+                                <li>
+                                  <span>2 </span>
+                                  Bathrooms
+                                </li>
+                                <li>
+                                  <span>3450 </span>
+                                  square Ft
+                                </li>
+                              </ul>
+                              <div className="product-hover-action">
+                                <ul>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      title="Wishlist"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#liton_wishlist_modal"
+                                    >
+                                      <i className="flaticon-heart-1" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="product-info-bottom">
+                              <div className="product-price">
+                                <span>
+                                  $10,00,00,00,00,00<label>/Day</label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+
+                      <div className="col-lg-4 col-sm-6 col-12">
+                        <Link to="/Property-details">
+                          <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                            <div className="product-img">
+                              <Link to="/Property-details">
+                                <img
+                                  src={
+                                    "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                  }
+                                  alt="#"
+                                />
+                              </Link>
+                            </div>
+                            <div className="product-info">
+                              <div className="product-badge">
+                                <ul>
+                                  <li className="sale-badg">For Rent</li>
+                                </ul>
+                              </div>
+                              <h2 className="product-title go-top">
+                                <Link to="/Property-details">New Home Nice View</Link>
+                              </h2>
+                              <div className="product-img-location">
+                                <ul>
+                                  <li className="go-top">
+                                    <Link to="/contact">
+                                      <i className="flaticon-pin" /> 299, Doon Mills Dr.
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
+                                <li>
+                                  <span>3 </span>
+                                  Bedrooms
+                                </li>
+                                <li>
+                                  <span>2 </span>
+                                  Bathrooms
+                                </li>
+                                <li>
+                                  <span>3450 </span>
+                                  square Ft
+                                </li>
+                              </ul>
+                              <div className="product-hover-action">
+                                <ul>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      title="Wishlist"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#liton_wishlist_modal"
+                                    >
+                                      <i className="flaticon-heart-1" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="product-info-bottom">
+                              <div className="product-price">
+                                <span>
+                                  $10,00,00,00,00,00<label>/Day</label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+
+                      <div className="col-lg-4 col-sm-6 col-12">
+                        <Link to="/Property-details">
+                          <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                            <div className="product-img">
                               <img
                                 src={
                                   "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 }
                                 alt="#"
                               />
-                            </Link>
-                          </div>
-                          <div className="product-info">
-                            <div className="product-badge">
-                              <ul>
-                                <li className="sale-badg">For Rent</li>
-                              </ul>
                             </div>
-                            <h2 className="product-title go-top">
-                              <Link to="/product-details">New Home Nice View</Link>
-                            </h2>
-                            <div className="product-img-location">
-                              <ul>
-                                <li className="go-top">
-                                  <Link to="/contact">
-                                    <i className="flaticon-pin" /> 299, Doon Mills Dr.
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                              <li>
-                                <span>3 </span>
-                                Bedrooms
-                              </li>
-                              <li>
-                                <span>2 </span>
-                                Bathrooms
-                              </li>
-                              <li>
-                                <span>3450 </span>
-                                square Ft
-                              </li>
-                            </ul>
-                            <div className="product-hover-action">
-                              <ul>
+                            <div className="product-info">
+                              <div className="product-badge">
+                                <ul>
+                                  <li className="sale-badg">For Rent</li>
+                                </ul>
+                              </div>
+                              <h2 className="product-title go-top">
+                                <Link to="/Property-details">New Home Nice View</Link>
+                              </h2>
+                              <div className="product-img-location">
+                                <ul>
+                                  <li className="go-top">
+                                    <Link to="/contact">
+                                      <i className="flaticon-pin" /> 299, Doon Mills Dr.
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
                                 <li>
-                                  <a
-                                    href="#"
-                                    title="Wishlist"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#liton_wishlist_modal"
-                                  >
-                                    <i className="flaticon-heart-1" />
-                                  </a>
+                                  <span>3 </span>
+                                  Bedrooms
+                                </li>
+                                <li>
+                                  <span>2 </span>
+                                  Bathrooms
+                                </li>
+                                <li>
+                                  <span>3450 </span>
+                                  square Ft
                                 </li>
                               </ul>
+                              <div className="product-hover-action">
+                                <ul>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      title="Wishlist"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#liton_wishlist_modal"
+                                    >
+                                      <i className="flaticon-heart-1" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="product-info-bottom">
+                              <div className="product-price">
+                                <span>
+                                  $10,00,00,00,00,00<label>/Day</label>
+                                </span>
+                              </div>
                             </div>
                           </div>
-                          <div className="product-info-bottom">
-                            <div className="product-price">
-                              <span>
-                                $10,00,00,00,00,00<label>/Day</label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+                        </Link>
                       </div>
-                      {/* ltn__product-item */}
+
                       <div className="col-lg-4 col-sm-6 col-12">
-                        <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                          <div className="product-img">
-                            <Link to="/product-details">
+                        <Link to="/Property-details">
+                          <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                            <div className="product-img">
                               <img
                                 src={
                                   "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 }
                                 alt="#"
                               />
-                            </Link>
-                          </div>
-                          <div className="product-info">
-                            <div className="product-badge">
-                              <ul>
-                                <li className="sale-badg">For Rent</li>
-                              </ul>
                             </div>
-                            <h2 className="product-title go-top">
-                              <Link to="/product-details">New Home Nice View</Link>
-                            </h2>
-                            <div className="product-img-location">
-                              <ul>
-                                <li className="go-top">
-                                  <Link to="/contact">
-                                    <i className="flaticon-pin" /> 299, Doon Mills Dr.
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                              <li>
-                                <span>3 </span>
-                                Bedrooms
-                              </li>
-                              <li>
-                                <span>2 </span>
-                                Bathrooms
-                              </li>
-                              <li>
-                                <span>3450 </span>
-                                square Ft
-                              </li>
-                            </ul>
-                            <div className="product-hover-action">
-                              <ul>
+                            <div className="product-info">
+                              <div className="product-badge">
+                                <ul>
+                                  <li className="sale-badg">For Rent</li>
+                                </ul>
+                              </div>
+                              <h2 className="product-title go-top">
+                                <Link to="/Property-details">New Home Nice View</Link>
+                              </h2>
+                              <div className="product-img-location">
+                                <ul>
+                                  <li className="go-top">
+                                    <Link to="/contact">
+                                      <i className="flaticon-pin" /> 299, Doon Mills Dr.
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
                                 <li>
-                                  <a
-                                    href="#"
-                                    title="Wishlist"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#liton_wishlist_modal"
-                                  >
-                                    <i className="flaticon-heart-1" />
-                                  </a>
+                                  <span>3 </span>
+                                  Bedrooms
                                 </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="product-info-bottom">
-                            <div className="product-price">
-                              <span>
-                                $10,00,00,00,00,00<label>/Month</label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* ltn__product-item */}
-                      <div className="col-lg-4 col-sm-6 col-12">
-                        <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                          <div className="product-img">
-                            <Link to="/product-details">
-                              <img
-                                src={
-                                  "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                }
-                                alt="#"
-                              />
-                            </Link>
-                          </div>
-                          <div className="product-info">
-                            <div className="product-badge">
-                              <ul>
-                                <li className="sale-badg">For Rent</li>
-                              </ul>
-                            </div>
-                            <h2 className="product-title go-top">
-                              <Link to="/product-details">New Home Nice View</Link>
-                            </h2>
-                            <div className="product-img-location">
-                              <ul>
-                                <li className="go-top">
-                                  <Link to="/contact">
-                                    <i className="flaticon-pin" /> 299, Doon Mills Dr.
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                              <li>
-                                <span>3 </span>
-                                Bedrooms
-                              </li>
-                              <li>
-                                <span>2 </span>
-                                Bathrooms
-                              </li>
-                              <li>
-                                <span>3450 </span>
-                                square Ft
-                              </li>
-                            </ul>
-                            <div className="product-hover-action">
-                              <ul>
                                 <li>
-                                  <a
-                                    href="#"
-                                    title="Wishlist"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#liton_wishlist_modal"
-                                  >
-                                    <i className="flaticon-heart-1" />
-                                  </a>
+                                  <span>2 </span>
+                                  Bathrooms
                                 </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="product-info-bottom">
-                            <div className="product-price">
-                              <span>
-                                $10,00,00,00,00,00<label>/Month</label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* ltn__product-item */}
-                      <div className="col-lg-4 col-sm-6 col-12">
-                        <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                          <div className="product-img">
-                            <Link to="/product-details">
-                              <img
-                                src={
-                                  "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                }
-                                alt="#"
-                              />
-                            </Link>
-                          </div>
-                          <div className="product-info">
-                            <div className="product-badge">
-                              <ul>
-                                <li className="sale-badg">For Rent</li>
-                              </ul>
-                            </div>
-                            <h2 className="product-title go-top">
-                              <Link to="/product-details">New Home Nice View</Link>
-                            </h2>
-                            <div className="product-img-location">
-                              <ul>
-                                <li className="go-top">
-                                  <Link to="/contact">
-                                    <i className="flaticon-pin" /> 299, Doon Mills Dr.
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                              <li>
-                                <span>3 </span>
-                                Bedrooms
-                              </li>
-                              <li>
-                                <span>2 </span>
-                                Bathrooms
-                              </li>
-                              <li>
-                                <span>3450 </span>
-                                square Ft
-                              </li>
-                            </ul>
-                            <div className="product-hover-action">
-                              <ul>
                                 <li>
-                                  <a
-                                    href="#"
-                                    title="Wishlist"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#liton_wishlist_modal"
-                                  >
-                                    <i className="flaticon-heart-1" />
-                                  </a>
+                                  <span>3450 </span>
+                                  square Ft
                                 </li>
                               </ul>
+                              <div className="product-hover-action">
+                                <ul>
+                                  <li>
+                                    <a
+                                      href="#"
+                                      title="Wishlist"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#liton_wishlist_modal"
+                                    >
+                                      <i className="flaticon-heart-1" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="product-info-bottom">
+                              <div className="product-price">
+                                <span>
+                                  $10,00,00,00,00,00<label>/Day</label>
+                                </span>
+                              </div>
                             </div>
                           </div>
-                          <div className="product-info-bottom">
-                            <div className="product-price">
-                              <span>
-                                $10,00,00,00,00,00<label>/Month</label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+                        </Link>
                       </div>
-                      {/* ltn__product-item */}
-                      <div className="col-lg-4 col-sm-6 col-12">
-                        <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                          <div className="product-img">
-                            <Link to="/product-details">
-                              <img
-                                src={
-                                  "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                }
-                                alt="#"
-                              />
-                            </Link>
-                          </div>
-                          <div className="product-info">
-                            <div className="product-badge">
-                              <ul>
-                                <li className="sale-badg">For Rent</li>
-                              </ul>
-                            </div>
-                            <h2 className="product-title go-top">
-                              <Link to="/product-details">New Home Nice View</Link>
-                            </h2>
-                            <div className="product-img-location">
-                              <ul>
-                                <li className="go-top">
-                                  <Link to="/contact">
-                                    <i className="flaticon-pin" /> 299, Doon Mills Dr.
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                              <li>
-                                <span>3 </span>
-                                Bedrooms
-                              </li>
-                              <li>
-                                <span>2 </span>
-                                Bathrooms
-                              </li>
-                              <li>
-                                <span>3450 </span>
-                                square Ft
-                              </li>
-                            </ul>
-                            <div className="product-hover-action">
-                              <ul>
-                                <li>
-                                  <a
-                                    href="#"
-                                    title="Wishlist"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#liton_wishlist_modal"
-                                  >
-                                    <i className="flaticon-heart-1" />
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="product-info-bottom">
-                            <div className="product-price">
-                              <span>
-                                $10,00,00,00,00,00<label>/Month</label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      {/* ltn__product-item */}
-                      <div className="col-lg-4 col-sm-6 col-12">
-                        <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                          <div className="product-img">
-                            <Link to="/product-details">
-                              <img
-                                src={
-                                  "https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                }
-                                alt="#"
-                              />
-                            </Link>
-                          </div>
-                          <div className="product-info">
-                            <div className="product-badge">
-                              <ul>
-                                <li className="sale-badg">For Rent</li>
-                              </ul>
-                            </div>
-                            <h2 className="product-title go-top">
-                              <Link to="/product-details">New Home Nice View</Link>
-                            </h2>
-                            <div className="product-img-location">
-                              <ul>
-                                <li className="go-top">
-                                  <Link to="/contact">
-                                    <i className="flaticon-pin" /> 299, Doon Mills Dr.
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                              <li>
-                                <span>3 </span>
-                                Bedrooms
-                              </li>
-                              <li>
-                                <span>2 </span>
-                                Bathrooms
-                              </li>
-                              <li>
-                                <span>3450 </span>
-                                square Ft
-                              </li>
-                            </ul>
-                            <div className="product-hover-action">
-                              <ul>
-                                <li>
-                                  <a
-                                    href="#"
-                                    title="Wishlist"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#liton_wishlist_modal"
-                                  >
-                                    <i className="flaticon-heart-1" />
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="product-info-bottom">
-                            <div className="product-price">
-                              <span>
-                                $10,00,00,00,00,00<label>/Month</label>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      {/*  */}
                     </div>
                   </div>
                 </div>
@@ -497,7 +423,7 @@ const AllProperties = () => {
                         </div>
                         <div className="modal-product-info go-top">
                           <h5>
-                            <Link to="/product-details">Brake Conversion Kit</Link>
+                            <Link to="/Property-details">Brake Conversion Kit</Link>
                           </h5>
                           <p className="added-cart">
                             <i className="fa fa-check-circle" /> Successfully added to your Wishlist

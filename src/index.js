@@ -9,6 +9,7 @@ import OtpU from "./components/otp";
 import changePass from "./components/changePass";
 import { ToastContainer } from "react-toastify";
 import Properties from "./components/properties";
+import PropertyDetail from "./components/propertyDetail";
 
 class Root extends Component {
   render() {
@@ -33,6 +34,7 @@ class Root extends Component {
           <Route exact path="/Otp" component={OtpU} />
           <Route exact path="/Change-password" component={changePass} />
           <Route exact path="/Properties" component={Properties} />
+          <Route exact path="/Property-details" component={PropertyDetail} />
         </Switch>
       </Router>
     );

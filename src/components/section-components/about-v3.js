@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
-class AboutV3 extends Component {
+class About extends Component {
 
     render() {
 
@@ -68,4 +68,4 @@ class AboutV3 extends Component {
         }
 }
 
-export default AboutV3
+export default About

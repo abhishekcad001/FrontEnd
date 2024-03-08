@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
-class ApartmentV2 extends Component {
+class ApartmentPlan extends Component {
 
     render() {
 
@@ -181,4 +181,4 @@ class ApartmentV2 extends Component {
         }
 }
 
-export default ApartmentV2
+export default ApartmentPlan

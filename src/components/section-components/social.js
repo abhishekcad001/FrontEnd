@@ -5,9 +5,6 @@ import parse from 'html-react-parser';
 class Social extends Component {
 
     render() {
-
-        let publicUrl = process.env.PUBLIC_URL+'/'
-
     return <div className="ltn__social-media">
 			<ul>
 				<li><a href="https://www.facebook.com/tuna-theme" title="Facebook"><i className="fab fa-facebook-f" /></a></li>

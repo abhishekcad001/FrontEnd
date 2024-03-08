@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Social from "../section-components/social";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const NavbarV2 = () => {
+const Navbar = () => {
   const history = useHistory();
   let publicUrl = process.env.PUBLIC_URL + "/";
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -216,4 +216,4 @@ const NavbarV2 = () => {
   );
 };
 
-export default NavbarV2;
+export default Navbar;
