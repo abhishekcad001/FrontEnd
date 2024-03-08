@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Social from "../section-components/social";
-import Copyright from "./copyright";
 
 class Footer_v1 extends Component {
   componentDidMount() {
@@ -50,7 +49,7 @@ class Footer_v1 extends Component {
                       <img width="100px" src={publicUrl + "assets/img/whitelogo.png"} alt="Logo" />
                     </div>
                   </div>
-                 
+
                   <div className="footer-address">
                     <ul>
                       <li>
@@ -104,11 +103,10 @@ class Footer_v1 extends Component {
                       <li>
                         <Link to="/register">Register</Link>
                       </li>
-                    
+
                       <li>
                         <Link to="/about">Terms &amp; Conditions</Link>
                       </li>
-                     
                     </ul>
                   </div>
                 </div>
@@ -133,7 +131,6 @@ class Footer_v1 extends Component {
             </div>
           </div>
         </div>
-        <Copyright />
       </footer>
     );
   }

@@ -139,6 +139,7 @@ const Login = () => {
                   <input
                     type="password"
                     name="password"
+                    id="password"
                     value={loginData?.password}
                     onChange={(e) => {
                       handleLogininfo(e);
@@ -147,6 +148,7 @@ const Login = () => {
                   />
                   <div className="btn-wrapper mt-0">
                     <button
+
                       className="theme-btn-1 btn btn-block"
                       onClick={() => {
                         handleSubmit();
