@@ -11,7 +11,7 @@ const AboutPage = () => {
           <div className="row">
             <div className="col-lg-6 align-self-center">
               <div className="about-us-img-wrap about-img-left">
-                <img src={publicUrl + "assets/img/others/13.png"} alt="About Us Image" />
+                <img src="https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Us Image" />
                 <div className="about-us-img-info about-us-img-info-2 about-us-img-info-3">
                   <div className="ltn__video-img ltn__animation-pulse1"></div>
                 </div>
@@ -79,13 +79,13 @@ const AboutPage = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="ltn__team-item ltn__team-item-3---">
                 <div className="team-img">
-                  <img src={publicUrl + "assets/img/team/4.jpg"} alt="Image" />
+                  <img src={publicUrl + "assets/img/team/abhi.jpg"} alt="Image" />
                 </div>
                 <div className="team-info">
                   <h4>
-                    <Link to="/team-details">Rosalina D. William</Link>
+                    <Link to="/team-details">Abhishe Kachhadiya</Link>
                   </h4>
-                  <h6 className="ltn__secondary-color">Real Estate Broker</h6>
+                  <h6 className="ltn__secondary-color">Real Estate (Rental) </h6>
                   <div className="ltn__social-media">
                     <ul>
                       <li>
@@ -111,13 +111,13 @@ const AboutPage = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="ltn__team-item ltn__team-item-3---">
                 <div className="team-img">
-                  <img src={publicUrl + "assets/img/team/2.jpg"} alt="Image" />
+                  <img src={publicUrl + "assets/img/team/jay.jpg"} alt="Image"  width="370px" height="360px"/>
                 </div>
                 <div className="team-info">
                   <h4>
-                    <Link to="/team-details">Kelian Anderson</Link>
+                    <Link to="/team-details">Jay Patel</Link>
                   </h4>
-                  <h6 className="ltn__secondary-color">Selling Agents</h6>
+                  <h6 className="ltn__secondary-color">Real Estate (Rental) </h6>
                   <div className="ltn__social-media">
                     <ul>
                       <li>
@@ -143,13 +143,13 @@ const AboutPage = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="ltn__team-item ltn__team-item-3---">
                 <div className="team-img">
-                  <img src={publicUrl + "assets/img/team/5.jpg"} alt="Image" />
+                  <img src={publicUrl + "assets/img/team/harsh.jpg"} alt="Image" />
                 </div>
                 <div className="team-info">
                   <h4>
-                    <Link to="/team-details">Miranda H. Halim</Link>
+                    <Link to="/team-details">Harsh Patel</Link>
                   </h4>
-                  <h6 className="ltn__secondary-color">Property Seller</h6>
+                  <h6 className="ltn__secondary-color">Real Estate (Rental) </h6>
                   <div className="ltn__social-media">
                     <ul>
                       <li>
