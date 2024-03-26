@@ -50,7 +50,7 @@ const Navbar = () => {
                           <Link to="/Properties">Listing</Link>
                         </li>
                         <li className="menu-icon">
-                          <Link to="#">About</Link>
+                          <Link to="/Aboutus">About</Link>
                         </li>
 
                         <li>
