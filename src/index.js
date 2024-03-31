@@ -10,7 +10,9 @@ import changePass from "./components/changePass";
 import { ToastContainer } from "react-toastify";
 import Properties from "./components/properties";
 import PropertyDetail from "./components/propertyDetail";
-import AboutUs from "./aboutUs";
+import AboutUs from "./components/aboutUs";
+import Faq from "./components/faq";
+
 
 class Root extends Component {
   render() {
@@ -37,6 +39,8 @@ class Root extends Component {
           <Route exact path="/Properties" component={Properties} />
           <Route exact path="/Property-details" component={PropertyDetail} />
           <Route exact path="/Aboutus" component={AboutUs} />
+          <Route exact path="/faq" component={Faq} />
+          <Route exact path="/contact" component={Faq} />
         </Switch>
       </Router>
     );
