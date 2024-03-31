@@ -2,16 +2,16 @@ import React from "react";
 import Navbar from "./global-components/navbar-v2";
 import Page_header from "./global-components/page-header";
 import Footer from "./global-components/footer";
-import SaveDetail from "./section-components/SaveDetail";
-const Save = () => {
+import ContectDetail from "./section-components/ContectDetail";
+const Contect = () => {
   return (
     <>
       <Navbar />
-      <Page_header headertitle="My Saved" subheader="Save" />
-      <SaveDetail />
+      <Page_header headertitle="Contact Us" subheader="Contact" />
+      <ContectDetail/>
       <Footer />
     </>
   );
 };
 
-export default Save;
+export default Contect;

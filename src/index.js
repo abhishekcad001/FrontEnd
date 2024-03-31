@@ -13,6 +13,7 @@ import PropertyDetail from "./components/propertyDetail";
 import AboutUs from "./components/aboutUs";
 import Faq from "./components/faq";
 import Save from "./components/Save";
+import Contect from "./components/Contect";
 
 
 class Root extends Component {
@@ -42,7 +43,7 @@ class Root extends Component {
           <Route exact path="/Aboutus" component={AboutUs} />
           <Route exact path="/faq" component={Faq} />
           <Route exact path="/save" component={Save} />
-          <Route exact path="/contact" component={Faq} />
+          <Route exact path="/contact" component={Contect} />
         </Switch>
       </Router>
     );
