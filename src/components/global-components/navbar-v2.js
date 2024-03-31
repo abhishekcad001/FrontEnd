@@ -17,15 +17,16 @@ const Navbar = () => {
   }, []);
   const handleLogout = () => {
     // Remove userEmail from local storage
-    localStorage.removeItem("UserEmail");
+    localStorage.removeItem("User");
     // Update isLoggedIn state to false
     setIsLoggedIn(false);
     history.push("/login");
   };
+  const user = JSON.parse(localStorage.getItem("User"));
+  console.log("first",user)
   return (
     <div>
       <header className="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
-      
         <div className="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white">
           <div className="container">
             <div className="row">
@@ -62,26 +63,6 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="col ltn__header-options ltn__header-options-2 mb-sm-20">
-                {/* header-search-1 */}
-                <div className="header-search-wrap">
-                  <div className="header-search-1">
-                    <div className="search-icon">
-                      <i className="icon-search for-search-show" />
-                      <i className="icon-cancel  for-search-close" />
-                    </div>
-                  </div>
-                  <div className="header-search-1-form">
-                    <form id="#" method="get" action="#">
-                      <input type="text" name="search" placeholder="Search here..." />
-                      <button type="submit">
-                        <span>
-                          <i className="icon-search" />
-                        </span>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-                {/* user-menu */}
                 <div className="ltn__drop-menu user-menu">
                   <ul>
                     <li>
@@ -89,14 +70,16 @@ const Navbar = () => {
                         <i className="icon-user" />
                       </Link>
                       <ul className="go-top">
-                        <li>
-                          <Link to="/login">Sign in</Link>
-                        </li>
-                        <li>
-                          <Link to="/register">Register</Link>
-                        </li>
-
-                        {isLoggedIn && (
+                        {!isLoggedIn ? (
+                          <>
+                            <li>
+                              <Link to="/login">Sign in</Link>
+                            </li>
+                            <li>
+                              <Link to="/register">Register</Link>
+                            </li>
+                          </>
+                        ) : (
                           <>
                             <li>
                               <Link to="/my-account">My Account</Link>
@@ -110,6 +93,7 @@ const Navbar = () => {
                         )}
                       </ul>
                     </li>
+                    <li><h6> {user?.firstName}</h6></li>
                   </ul>
                 </div>
 
