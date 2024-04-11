@@ -14,7 +14,7 @@ import AboutUs from "./components/aboutUs";
 import Faq from "./components/faq";
 import Save from "./components/Save";
 import Contect from "./components/Contect";
-
+import BecamLister from "./components/BecamLister";
 
 class Root extends Component {
   render() {
@@ -39,11 +39,14 @@ class Root extends Component {
           <Route exact path="/Otp" component={OtpU} />
           <Route exact path="/Change-password" component={changePass} />
           <Route exact path="/Properties" component={Properties} />
-          <Route exact path="/Property-details" component={PropertyDetail} />
+
+          <Route exact path="/Property-details/:id" component={PropertyDetail} />
+
           <Route exact path="/Aboutus" component={AboutUs} />
           <Route exact path="/faq" component={Faq} />
           <Route exact path="/save" component={Save} />
           <Route exact path="/contact" component={Contect} />
+          <Route exact path="/beLister" component={BecamLister} />
         </Switch>
       </Router>
     );

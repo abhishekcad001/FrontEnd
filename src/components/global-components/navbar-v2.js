@@ -23,7 +23,7 @@ const Navbar = () => {
     history.push("/login");
   };
   const user = JSON.parse(localStorage.getItem("User"));
-  console.log("first",user)
+
   return (
     <div>
       <header className="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
@@ -57,6 +57,10 @@ const Navbar = () => {
                         <li>
                           <Link to="/contact">Contact</Link>
                         </li>
+
+                        <li>
+                          <Link to="/beLister">Become Lister</Link>
+                        </li>
                       </ul>
                     </div>
                   </nav>
@@ -82,7 +86,10 @@ const Navbar = () => {
                         ) : (
                           <>
                             <li>
-                              <Link to="/my-account">My Account</Link>
+                              <Link to="/">My Account</Link>
+                            </li>
+                            <li>
+                              <Link to="/save">My Listing</Link>
                             </li>
                             <li>
                               <Link to="#" onClick={() => handleLogout()}>
@@ -93,7 +100,9 @@ const Navbar = () => {
                         )}
                       </ul>
                     </li>
-                    <li><h6> {user?.firstName}</h6></li>
+                    <li>
+                      <h6> {user?.firstName}</h6>
+                    </li>
                   </ul>
                 </div>
 

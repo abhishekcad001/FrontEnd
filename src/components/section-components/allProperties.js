@@ -16,13 +16,13 @@ const AllProperties = () => {
 
   const getAllProperty = async () => {
     try {
-      console.log("first", token);
+
       const response = await axios.get("http://localhost:5000/api/user/View_All_List", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("==", response.data.data);
+      
       setAllProperty(response.data.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -30,8 +30,9 @@ const AllProperties = () => {
     }
   };
   const handleDetail = (id) => {
-    history.push(`/Property-details?id=${id}`);
+    history.push(`/Property-details/${id}`);
   };
+  
 
   return (
     <>

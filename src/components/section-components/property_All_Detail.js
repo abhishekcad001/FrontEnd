@@ -1,81 +1,63 @@
-import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import AwesomeSlider from "react-awesome-slider";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+import "react-awesome-slider/dist/styles.css";
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const Property_All_Detail = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
+  const [details, setDetails] = useState({});
+
+  let params = useParams();
+  // Check what's inside params object
+  let { id } = params;
+
+  const token = JSON.parse(localStorage.getItem("UserToken"));
+
+  const getPropertyDetail = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/user/view_Single_All_List/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(":::::::::::::::::::::::::::::::::::::", response.data.data);
+      setDetails(response.data.data);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      // Handle error gracefully, e.g., display a message to the user
+    }
+  };
+
+  useEffect(() => {
+    getPropertyDetail();
+  }, []);
   return (
     <div>
       <div className="ltn__img-slider-area mb-90">
         <div className="container-fluid">
-          <div className="row ltn__image-slider-5-active slick-arrow-1 slick-arrow-1-inner ltn__no-gutter-all">
-            <div className="col-lg-12">
-              <div className="ltn__img-slide-item-4">
-                <a
-                  href="https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  data-rel="lightcase:myCollection"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image"
-                  />
-                </a>
+          <div className="row ">
+            {/* {details?.photos?.map((photo) => (
+              <div className="col-lg-12">
+                <div className="ltn__img-slide-item-4">
+                  <a href={photo?.url} data-rel="lightcase:myCollection">
+                    <img src={photo?.url} alt="Image" />
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="ltn__img-slide-item-4">
-                <a
-                  href="https://plus.unsplash.com/premium_photo-1661293935605-0619fd94cf03?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  data-rel="lightcase:myCollection"
-                >
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1661293935605-0619fd94cf03?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="ltn__img-slide-item-4">
-                <a
-                  href="https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  data-rel="lightcase:myCollection"
-                >
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="ltn__img-slide-item-4">
-                <a
-                  href="https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  data-rel="lightcase:myCollection"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="ltn__img-slide-item-4">
-                <a
-                  href="https://images.unsplash.com/photo-1530334580314-1e7a340426a0?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  data-rel="lightcase:myCollection"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1530334580314-1e7a340426a0?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Image"
-                  />
-                </a>
-              </div>
-            </div>
+            ))} */}
+
+            <AutoplaySlider play={true} interval={3000}>
+              {details?.photos?.map((photo) => (
+                <div data-src={photo?.url} />
+              ))}
+            </AutoplaySlider>
           </div>
         </div>
       </div>
+
       <div className="ltn__shop-details-area pb-10">
         <div className="container">
           <div className="row">
@@ -84,74 +66,55 @@ const Property_All_Detail = () => {
                 <div className="ltn__blog-meta">
                   <ul>
                     <li className="ltn__blog-category">
-                      <Link to="#">Featured</Link>
-                    </li>
-                    <li className="ltn__blog-category">
                       <Link className="bg-orange" to="#">
                         For Rent
                       </Link>
                     </li>
                     <li className="ltn__blog-date">
                       <i className="far fa-calendar-alt" />
-                      May 19, 2021
+                      {details?.available_from}
                     </li>
                   </ul>
                 </div>
-                <h1>Lorem Ipsum</h1>
+                <h1>{details?.title}</h1>
                 <label>
                   <span className="ltn__secondary-color">
                     <i className="flaticon-pin" />
                   </span>{" "}
-                  299, Doon vally
+                  {details?.floor_no}
+                  {details?.address}
                 </label>
                 <h4 className="title-2">Description</h4>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                  software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book.
-                </p>
+                <p>{details?.description}</p>
+
                 <h4 className="title-2">Property Detail</h4>
                 <div className="property-detail-info-list section-bg-1 clearfix mb-60">
                   <ul>
                     <li>
-                      <label>Property ID:</label> <span>HZ29</span>
+                      <label>Property ID:</label> <span>{details?.id}</span>
                     </li>
                     <li>
-                      <label>Home Area: </label> <span>120 sqft</span>
+                      <label>Home Area: </label> <span>{details?.size} sqft</span>
                     </li>
                     <li>
-                      <label>Rooms:</label> <span>7</span>
+                      <label>Rooms:</label> <span>{details?.rooms}</span>
                     </li>
                     <li>
-                      <label>Baths:</label> <span>2</span>
-                    </li>
-                    <li>
-                      <label>Year built:</label> <span>1992</span>
+                      <label>Baths:</label> <span>{details?.bathrooms}</span>
                     </li>
                   </ul>
                   <ul>
                     <li>
-                      <label>Lot Area:</label> <span>HZ29 </span>
+                      <label>Lot Area:</label> <span>{details?.zip} </span>
                     </li>
                     <li>
                       <label>Lot dimensions:</label> <span>120 sqft</span>
                     </li>
                     <li>
-                      <label>Beds:</label> <span>7</span>
+                      <label>Beds:</label> <span>{details?.badrooms}</span>
                     </li>
                     <li>
-                      <label>Price:</label> <span>2</span>
-                    </li>
-                    <li>
-                      <label>Property Status:</label> <span>For Sale</span>
+                      <label>Price:</label> <span>${details?.price}/Month</span>
                     </li>
                   </ul>
                 </div>
@@ -232,136 +195,7 @@ const Property_All_Detail = () => {
                     </li>
                   </ul>
                 </div>
-                <h4 className="title-2">From Our Gallery</h4>
 
-                <h4 className="title-2 mb-10">Amenities</h4>
-                <div className="property-details-amenities mb-60">
-                  <div className="row">
-                    <div className="col-lg-4 col-md-6">
-                      <div className="ltn__menu-widget">
-                        <ul>
-                          <li>
-                            <label className="checkbox-item">
-                              Air Conditioning
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Gym
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Microwave
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Swimming Pool
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              WiFi
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6">
-                      <div className="ltn__menu-widget">
-                        <ul>
-                          <li>
-                            <label className="checkbox-item">
-                              Barbeque
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Recreation
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Microwave
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Basketball Cout
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Fireplace
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6">
-                      <div className="ltn__menu-widget">
-                        <ul>
-                          <li>
-                            <label className="checkbox-item">
-                              Refrigerator
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Window Coverings
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Washer
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              24x7 Security
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                          <li>
-                            <label className="checkbox-item">
-                              Indoor Game
-                              <input type="checkbox" defaultChecked="checked" />
-                              <span className="checkmark" />
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <h4 className="title-2">Location</h4>
                 <div className="property-details-google-map mb-60">
                   <iframe
@@ -374,8 +208,6 @@ const Property_All_Detail = () => {
                     tabIndex={0}
                   />
                 </div>
-
-                
               </div>
             </div>
             {/* sidebar gose here  */}
