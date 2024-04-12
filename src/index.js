@@ -15,6 +15,7 @@ import Faq from "./components/faq";
 import Save from "./components/Save";
 import Contect from "./components/Contect";
 import BecamLister from "./components/BecamLister";
+import Pricing from "./components/Pricing";
 
 class Root extends Component {
   render() {
@@ -47,6 +48,7 @@ class Root extends Component {
           <Route exact path="/save" component={Save} />
           <Route exact path="/contact" component={Contect} />
           <Route exact path="/beLister" component={BecamLister} />
+          <Route exact path="/Pricing" component={Pricing} />
         </Switch>
       </Router>
     );
