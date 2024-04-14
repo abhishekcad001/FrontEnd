@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const AllPricing = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
@@ -17,35 +18,40 @@ const AllPricing = () => {
                 <p>
                   Upto 2 Home Allow
                   <br />
-                No  Measure Area feature <br />No Communication
+                  No Measure Area feature <br />
+                  No Communication
                 </p>
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
-                <div className="ltn__contact-address-icon">
-                  <h1>Starter</h1>
+              <Link to="/CheckOut">
+                <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                  <div className="ltn__contact-address-icon">
+                    <h1>Starter</h1>
+                  </div>
+                  <h3>$ 20.00 / Month</h3>
+                  <p>
+                    Upto 10 Home Allow
+                    <br />
+                    Measure Area feature <br /> Communication
+                  </p>
                 </div>
-                <h3>$ 20.00 / Month</h3>
-                <p>
-                  Upto 10 Home Allow
-                  <br />
-                  Measure Area feature <br /> Communication
-                </p>
-              </div>
+              </Link>
             </div>
             <div className="col-lg-4">
-              <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
-                <div className="ltn__contact-address-icon">
-                  <h1>Enterprise</h1>
+              <Link to="/contact">
+                <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                  <div className="ltn__contact-address-icon">
+                    <h1>Enterprise</h1>
+                  </div>
+                  <h3>Custom</h3>
+                  <p>
+                    Upto 100 Home Allow
+                    <br />
+                    Measure Area feature <br /> Communication
+                  </p>
                 </div>
-                <h3>Custom</h3>
-                <p>
-                  Upto 100 Home Allow
-                  <br />
-                  Measure Area feature <br /> Communication
-                </p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

@@ -64,6 +64,9 @@ const Navbar = () => {
                         <li>
                           <Link to="/Pricing">Pricing</Link>
                         </li>
+                        <li>
+                          <a href="https://6619a8b757cd880086e33aff--splendid-muffin-a5c0dc.netlify.app/">Roof Area</a>
+                        </li>
                       </ul>
                     </div>
                   </nav>
@@ -89,7 +92,7 @@ const Navbar = () => {
                         ) : (
                           <>
                             <li>
-                              <Link to="/">My Account</Link>
+                              <Link to="/MyAccount">My Account</Link>
                             </li>
                             <li>
                               <Link to="/save">My Listing</Link>

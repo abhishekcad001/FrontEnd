@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+import { toast } from "react-toastify";
 const AllProperties = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
   const history = useHistory();
@@ -33,7 +33,22 @@ const AllProperties = () => {
     history.push(`/Property-details/${id}`);
   };
   
-
+  const handleSave = async (homeId) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/user/wishList",
+        { homeId: homeId },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      toast.success("saved successfully  ");
+    } catch (error) {
+      console.error("Error saving to wishlist:", error);
+    }
+  };
   return (
     <>
       <div className="ltn__product-area ltn__product-gutter mb-100">
@@ -91,14 +106,14 @@ const AllProperties = () => {
                         <div
                           key={property.id}
                           className="col-lg-4 col-sm-6 col-12"
-                          onClick={() => handleDetail(property.id)}
+                         
                         >
-                          <Link to="/Property-details">
+                          
                             <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                              <div className="product-img">
-                                <Link to="/Property-details">
+                              <div className="product-img"  onClick={() => handleDetail(property.id)}>
+                                
                                   <img src={property.photos[0].url} alt="#" width="450px" height="250px" />
-                                </Link>
+                               
                               </div>
                               <div className="product-info">
                                 <div className="product-badge">
@@ -107,7 +122,7 @@ const AllProperties = () => {
                                   </ul>
                                 </div>
                                 <h2 className="product-title go-top">
-                                  <Link to="/Property-details">{property.title}</Link>
+                                {property.title}
                                 </h2>
                                 <div className="product-img-location">
                                   <ul>
@@ -133,10 +148,8 @@ const AllProperties = () => {
                                   <ul>
                                     <li>
                                       <a
-                                        href="#"
-                                        title="Wishlist"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#liton_wishlist_modal"
+                                       
+                                        onClick={()=>handleSave(property.id)}
                                       >
                                         <i className="flaticon-heart-1" />
                                       </a>
@@ -150,7 +163,7 @@ const AllProperties = () => {
                                 </div>
                               </div>
                             </div>
-                          </Link>
+                          
                         </div>
                       ))}
                     </div>

@@ -17,6 +17,8 @@ import Contect from "./components/Contect";
 import BecamLister from "./components/BecamLister";
 import Pricing from "./components/Pricing";
 import NotFound from "./components/404";
+import Checkout from "./components/Checkout";
+import MyAccount from "./components/MyAccount";
 
 class Root extends Component {
   render() {
@@ -41,15 +43,15 @@ class Root extends Component {
           <Route exact path="/Otp" component={OtpU} />
           <Route exact path="/Change-password" component={changePass} />
           <Route exact path="/Properties" component={Properties} />
-
           <Route exact path="/Property-details/:id" component={PropertyDetail} />
-
           <Route exact path="/Aboutus" component={AboutUs} />
           <Route exact path="/faq" component={Faq} />
           <Route exact path="/save" component={Save} />
           <Route exact path="/contact" component={Contect} />
           <Route exact path="/beLister" component={BecamLister} />
           <Route exact path="/Pricing" component={Pricing} />
+          <Route exact path="/CheckOut" component={Checkout} />
+          <Route exact path="/MyAccount" component={MyAccount} />
           <Route component={NotFound} />
         </Switch>
       </Router>
